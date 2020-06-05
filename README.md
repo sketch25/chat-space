@@ -28,13 +28,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false,  unique: true|
-|name|strint|null: false, foreign_key: true, unique: true|
+|name|string|null: false, unique: true|
 |mail|string|null: false, unique: true|
 |password|string|null: false|
 
 ### Association
 - has_many :groups_users
-- has_many :groups, through:groups_users
+- has_many :groups, through: :groups_users
 - has_many :messages
 
 ## groupsテーブル
@@ -42,19 +42,19 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|name|strint|null: false, foreign_key: true, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :groups_users
-- has_many :users, through:groups_users
+- has_many :users, through: :groups_users
 - has_many :messages
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -64,10 +64,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|body|text|null: false|
-|image|strint| |
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|body|text| |
+|image|string| |
 |created_at|integer|null: false|
 
 ### Association
