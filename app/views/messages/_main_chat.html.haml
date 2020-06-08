@@ -1,0 +1,57 @@
+.Chat-main
+  .group-info
+    .group-info__left
+      .group-info__left__group-name
+        test
+      .group-info__left__group-member
+        Member:name
+    .group-info__right
+      = link_to "#", class: "Chat-main__group-info__right__edit" do
+        Edit
+
+  .message-list
+
+    .message-box
+      .message-box__message-info
+        .message-box__message-info__user-name
+          masa
+        .message-box__message-info__message__date
+          2019/11/20(wed) 17:34:01
+      .message-box__message-content
+        おはよう！
+
+    .message-box
+      .message-box__message-info
+        .message-box__message-info__user-name
+          masa
+        .message-box__message-info__message__date
+          2019/11/20(wed) 17:34:01
+      .message-box__message-content
+        おはよう！
+
+    .message-box
+      .message-box__message-info
+        .message-box__message-info__user-name
+          masa
+        .message-box__message-info__message__date
+          2019/11/20(wed) 17:34:01
+      .message-box__message-content
+        おはよう！
+
+    .message-box
+      .message-box__message-info
+        .message-box__message-info__user-name
+          masa
+        .message-box__message-info__message__date
+          2019/11/20(wed) 17:34:01
+      .message-box__message-content
+        おはよう！
+
+  .message-form
+    %form.new-message
+      .new-message__input-box
+        %input{type: "text", class: "new-message__input-box__text", placeholder: "type a message"}
+        %label{class: "new-message__input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "new-message__input-box__image__file"}
+      %input{type: "submit", class: "new-message__submit-btn", value: "Send"}
