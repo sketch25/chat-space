@@ -4,7 +4,7 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "#", class: "top-items__icons__btn" do
+        = link_to "groups/new", class: "top-items__icons__btn" do
           = icon('far', 'edit', class: "top-items__icons__btn--icon")
           %span<>
         = link_to edit_user_path(current_user), class: "top-items__icons__btn" do
@@ -12,33 +12,10 @@
           %span<>
 
   .group-list
-
-    .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
-
-    .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
-
-    .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
-
-    .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
-        
-    .Group
-      .Group__name
-        techcamp
-      .Group__message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージがありません
