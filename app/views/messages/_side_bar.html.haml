@@ -4,7 +4,7 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "groups/new", class: "top-items__icons__btn" do
+        = link_to new_group_path, class: "top-items__icons__btn" do
           = icon('far', 'edit', class: "top-items__icons__btn--icon")
           %span<>
         = link_to edit_user_path(current_user), class: "top-items__icons__btn" do
@@ -14,8 +14,8 @@
   .group-list
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .Group__name
             = group.name
           .Group__message
-            メッセージがありません
+            = group.show_last_message
