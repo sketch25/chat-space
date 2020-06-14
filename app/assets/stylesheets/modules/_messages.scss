@@ -77,6 +77,13 @@
       &__group-member {
         color: #999999;
         font-size: 12px;
+        display: flex;
+        &__userlist {
+          display: flex;
+          &__user{
+            padding-right: 5px;
+          }
+        }
       }
     }
     &__right {
