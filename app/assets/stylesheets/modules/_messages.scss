@@ -41,6 +41,8 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0px 20px;
+    overflow: hidden;
+    overflow: scroll;
     .Group {
       padding: 20px 0 40px 0;
       &__name {
