@@ -107,6 +107,7 @@
   height: calc(100vh - 100px - 90px);
   padding: 35px 45px;
   overflow: hidden;
+  overflow: scroll;
   .message-box {
     margin-bottom: 46px;
     &__message-info {
